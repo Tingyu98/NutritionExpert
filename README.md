@@ -1,4 +1,4 @@
-# NutritionExpert
+# Computer Vision Nutrition Tracker
 
 ## Introduction: 
 In today's fast-paced and busy world, maintaining a healthy diet has become increasingly challenging. We leveraged YOLOv8 trained on UECFOOD-256 and School Lunch datasets to empower NutritionExpert to accurately detect and categorize various food items within an uploaded meal image. Integration with CalorieNinjas API provides relevant nutritional analyses. The NutritionExpert web app powered by Streamlit also offers personalized dietary plans, furnishing users with real-time, reliable information tailored to their balanced diet needs.
