@@ -8,22 +8,34 @@ In today's fast-paced world, maintaining a healthy diet has become increasingly 
 * Provide detailed nutrition insights including calorie counts and macronutrient breakdowns.
 * Support personalized diet planning through AI-powered recommendations.
 
-## Approach:
-In order to address the challenge of personalized nutrition analysis and diet planning, we have incorporated three essential technologies: YOLOv8, Calorie Ninjas API, and Streamlit. These technologies collectively contribute to delivering a solution that is both precise and user-friendly.
+## Methodology
+* Dataset Selection– UECFOOD-256 and School Lunch datasets (276 categories; 65 classes used for training). http://foodcam.mobi/dataset.html
+* Data Preprocessing – Converted annotations to YOLO format, normalized images, and split data (Train:Val = 9:1).
+* Model Training – Used YOLOv8, exploring different hyperparameters (epochs, learning rate, data split).
+* Evaluation – Measured model performance using mAP (mean Average Precision) and precision-recall curves.
+* Integration – Linked detection results with CalorieNinjas API for nutrition info and Streamlit for a user-friendly interface.
+* Diet Planning – Integrated GPT-4 via OpenAI API to provide personalized meal recommendations.
+  
+## Results & Insights
+* Detection Accuracy: YOLOv8 achieved mAP ≈ 73% on the combined UECFOOD-256 and School Lunch datasets.
+* Bounding Box Quality: Most food items were labeled correctly with accurate bounding boxes. However, items partially cut off at image edges were more error-prone.
+* Training Improvements: Increasing epochs (10 → 20) reduced validation and loss values, improving model stability.
+* Precision-Recall Curve: Indicated precision above 0.7 across many classes, but recall decreased for underrepresented categories.
+* User Impact: Integration with CalorieNinjas API ensured each detection came with real nutritional data, making the system actionable beyond classification.
+* 
+### Example Food Detection
+<img width="687" height="459" alt="bee40815-e974-40f6-bd99-1fb5a27d3bca" src="https://github.com/user-attachments/assets/de96ab71-c7b4-4f20-ad19-693c4b8fbd5e" />
 
-* YOLOv8:
-It segments the image into a grid and predicts bounding boxes and class probabilities directly on that grid. It is widely used in applications that require fast and precise object detection in real-time scenarios.
+## Application
+* Personal Use – Track meals, calories, and macronutrients.
+* Healthcare & Fitness – Assist dietitians/trainers in monitoring diets.
+* Food Industry – Enable smart canteens, nutrition tracking apps, and wellness platforms.
 
-* Calorie Ninjas API:
-The API clients application interacts with the Text Nutrition API by sending a GET request to its endpoint. The API utilizes its AI-powered algorithms to process the request and extract nutrition information. Once the data is extracted, it is formatted accordingly and sent back to the client as a JSON response, providing the required nutrition details.
-
-* Streamlit:
-Streamlit is an open-source Python library, with Streamlit, we create a multi-paged frontend that connects seamlessly with our backend APIs and the pre-trained YOLOv8 model. Allowing users to upload their plate, and view the analyzed results.
-
-## Datasets:
-UECFOOD-256 and School Lunch
-http://foodcam.mobi/dataset.html 
-
+## Future Work
+* Larger Datasets – Expand categories beyond Japanese/School Lunch food.
+* Balanced Data – Address class imbalance for underrepresented food types.
+* Weight Measurement – Incorporate methods to estimate portion size, volume, and weight.
+* Deployment – Package into a mobile application for real-time usage.
 
 
 
