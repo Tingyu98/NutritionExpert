@@ -22,7 +22,7 @@ In today's fast-paced world, maintaining a healthy diet has become increasingly 
 * Training Improvements: Increasing epochs (10 → 20) reduced validation and loss values, improving model stability.
 * Precision-Recall Curve: Indicated precision above 0.7 across many classes, but recall decreased for underrepresented categories.
 * User Impact: Integration with CalorieNinjas API ensured each detection came with real nutritional data, making the system actionable beyond classification.
-* 
+
 ### Example Food Detection
 <img width="687" height="459" alt="bee40815-e974-40f6-bd99-1fb5a27d3bca" src="https://github.com/user-attachments/assets/de96ab71-c7b4-4f20-ad19-693c4b8fbd5e" />
 
